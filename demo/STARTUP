@@ -1,11 +1,20 @@
+(of course parts/most of the points are more a TODO item
+ than an instruction)
 
 * start from `bitbake core-image-unify` which results in image
   usually called something like:
          core-image-unify-sun7i-a20-lamobo-r1-20160720104954.rootfs.sunxi-sdimg
+* dd that to a sdcard and boot the banana-pi
 
 * bootup
-* parted resizepartition 2 ; -1 ...
+* parted resizepartition 2 ; -1 ... // resize 2nd partition to size of device
 * resize2fs /dev/mm*p2
 
 * copy ./config.xml -> /etc/uno-name-resolver/config
 * /opt/virtualizer/config/universal-node1-example.xml -> adapt SAPs
+
+* systemctl disable autoisis
+* systemctl disable demo-config
+* systemctl enable unify-virtualizer
+* systemctl enable uno-name-resolver
+* systemctl enable uno

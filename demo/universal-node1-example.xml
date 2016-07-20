@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<universal-node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                 xsi:noNamespaceSchemaLocation="universal-node-schema.xsd">
+
+	<ports>
+		<port name="eth0.X">
+			<virtualized as="node1-port1" port-type="port-sap" sap="sap099"/>
+		</port>
+		<port name="eth0.2">
+			<virtualized as="node1-port2" port-type="port-sap" sap="SAP012"/>
+		</port>
+		<port name="eth0.3">
+			<virtualized as="node1-port3" port-type="port-sap" sap="sap013"/>
+		</port>
+		<port name="eth0.4">
+			<virtualized as="node1-port4" port-type="port-sap" sap="sap014"/>
+		</port>
+		
+		<!-- 
+			Values for "port-type":
+			* port-abstract
+			* port-type
+		-->	
+		
+	</ports>	
+
+</universal-node>
