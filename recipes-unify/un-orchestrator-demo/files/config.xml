@@ -41,7 +41,7 @@
 		
 	</network-function>
 	
-	<network-function name="balancer-server" num-ports="1" summary="Lego balancer server">
+	<network-function name="balance_server" num-ports="1" summary="Lego balancer server">
 		<native uri="/opt/unify/NFs/balancer-nf.tar.gz" dependencies="" location="local"/>
 	</network-function>
 
