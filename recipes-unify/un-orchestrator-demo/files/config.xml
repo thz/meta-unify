@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network-functions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                 xsi:noNamespaceSchemaLocation="network-functions.xsd">
+                 
+	<!--
+		This is an example of configuration file for the name-resolver. For each
+		network function name, it contains a list of possible implementations for
+		that network function. 
+		
+		An implementation can be:
+		* a 'docker' container
+		* a 'dpdk' (secondary) process
+		* a 'kvm' virtual machine
+		* a 'native' native functionality
+		
+		In case of docker container, the file specifies the URI from which the
+		image of this container can be downloaded. 
+		
+		In case of dpdk (secondary) process, the file specifies the URI from which
+		the executable can be retrieved and the number of cores required by the
+		network function. Since the URI can be a web URL or a path on the local file
+		system, the file also specifies to interpret the URI through the attribute
+		location.
+		
+		In case of KVM virtual machine, the file specifies an URI that points to an XML 
+		Libvirt domain definition, which the orchestrator uses as a template for the 
+		creation and execution of the network function.
+		
+		In case of native functionality, the file specifies the URI from which
+		the script or executable can be retrieved and the list of dependencies required
+		by the network function. Since the URI can be a web URL or a path on the local file
+		system, the file also specifies to interpret the URI through the attribute
+		location.
+	-->
+
+	<network-function name="example" num-ports="2" summary="Example VNF with several implementations">
+		<!-- Several implementations are available for this network function -->
+
+		<native uri="/opt/unify/NFs/nativeNF_example.tar.gz" dependencies="iptables ebtables" location="local"/>
+		
+	</network-function>
+	
+	<network-function name="balancer-server" num-ports="1" summary="Lego balancer server">
+		<native uri="/opt/unify/NFs/balancer-nf.tar.gz" dependencies="" location="local"/>
+	</network-function>
+
+</network-functions>
