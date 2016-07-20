@@ -7,16 +7,15 @@
 * dd that to a sdcard and boot the banana-pi
 
 * bootup
-* parted resizepartition 2 ; -1 ... // resize 2nd partition to size of device
+* parted ; resizepartition 2 ; -1 ; q // resize 2nd partition to size of device
 * resize2fs /dev/mm*p2
 
-* copy ./config.xml -> /etc/uno-name-resolver/config
 * /opt/virtualizer/config/universal-node1-example.xml -> adapt SAPs
 
 * systemctl disable autoisis
 * systemctl disable demo-config
 * systemctl disable zebra
 
-* systemctl enable unify-virtualizer
-* systemctl enable uno-name-resolver
 * systemctl enable uno
+* systemctl enable uno-name-resolver
+* systemctl enable unify-virtualizer
